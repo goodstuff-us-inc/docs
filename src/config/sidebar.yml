@@ -4,5 +4,5 @@
   link: '/'
 - label: Docs
   items:
-    - label: ''
+    - label: 'Architecture'
       link: '/architecture'

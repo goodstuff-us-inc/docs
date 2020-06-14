@@ -10,7 +10,7 @@ module.exports = {
     siteLanguage: `en`,
     themeColor: `#7159c1`,
     basePath: `/`,
-    footer: `Theme by Rocketseat`,
+    footer: `Theme by Rocketseat`
   },
   plugins: [
     {
@@ -18,9 +18,9 @@ module.exports = {
       options: {
         configPath: `src/config`,
         docsPath: `src/docs`,
-        githubUrl: `https://github.com/rocketseat/gatsby-themes`,
-        baseDir: `examples/gatsby-theme-docs`,
-      },
+        githubUrl: `https://github.com/goodstuff-us-inc/GoodStuff`,
+        baseDir: ``
+      }
     },
     {
       resolve: `gatsby-plugin-manifest`,
@@ -30,22 +30,22 @@ module.exports = {
         start_url: `/`,
         background_color: `#ffffff`,
         display: `standalone`,
-        icon: `static/favicon.png`,
-      },
+        icon: `static/favicon.png`
+      }
     },
     `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         // trackingId: ``,
-      },
+      }
     },
     {
       resolve: `gatsby-plugin-canonical-urls`,
       options: {
-        siteUrl: `https://rocketdocs.netlify.com`,
-      },
+        siteUrl: `https://rocketdocs.netlify.com`
+      }
     },
-    `gatsby-plugin-offline`,
-  ],
-};
+    `gatsby-plugin-offline`
+  ]
+}
