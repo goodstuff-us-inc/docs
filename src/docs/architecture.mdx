@@ -1,7 +1,27 @@
 # Architecture
 
 ## Client-side
-All client-side code is written in React Native.
+All client-side code is written in React Native. This is the code that gets compiled into Android and iOS binaries via the `expo` framework.
+Right now, `expo` is being used in the "managed" mode, which means that the developer/maintainer is *only* required to write JavaScript, and
+does not need to write any Swift or Java code. More details about the "managed" workflow can be found [here](https://docs.expo.io/introduction/managed-vs-bare/).
+Note that Expo is a wrapper around React Native, at any point in time, it's possible to "eject" from the Expo framework; the result of ejecting is to
+produce a "vanilla" React Native project.
+
+## API
+The API between the client-side code and the backend is a GraphQL API that is almost entirely *generated* by the Amplify framework.
+[Amplify](https://docs.amplify.aws/start/q/integration/react-native) is an AWS framework specifically designed for serverless web and mobile applications.
+
 
 ## Server-side
-This is a serverless application; all server-side logic exists within a collection of AWS services, all managed via the Amplify framework.
+This is a serverless application; all server-side logic exists within a collection of AWS services, all managed via the Amplify framework. As of right now,
+the following services are being managed by Amplify:
+- AppSync API: this provides our GraphQL API
+- Lambda: this provides us with functions that we can evaluate in our serverless environment, and is currently being used for "hooks" or "triggers" in our
+core signup flow
+- Authentication is being handled within AWS Cognito; this is the service that maintains all user credentials and manages user sessions + privacy
+
+## Databases
+- DynamoDB is currently the only database being used. All persistent storage exists here.
+
+## Resources
+- [GraphQL vs REST](https://www.apollographql.com/blog/graphql-vs-rest-5d425123e34b)
